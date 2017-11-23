@@ -1,2 +1,2 @@
-# Ajedrez-Objects
-Ajedrez en processing diseñado con orientación a objetos
+# Ajedrez-2.0
+Versión actual del proyecto
