@@ -30,53 +30,69 @@ PImage m2;
 PImage m3;
 PImage jm;
 PImage mal;
-boolean Turno=true;
-int fila =8;
-int columna=8;
-int t=7;
-int n=1;
+boolean Turno = true;
+boolean bot1 = false;
+boolean bot2 = false;
+boolean bot3 = false;
+int fila = 8;
+int columna = 8;
+int t = 7;
+int n = 1;
 int j, k;
 int[][] Mx;
 int[][] My;
 Piezas[] PiezasB;
 Piezas[] PiezasN;
 PImage ini;
-boolean jc=false;
+PImage [] gf = new PImage [86];
 Btom[] b = new Btom [3];
 int tc;
 int ttc;
-int a,c;
+int a, c;
 int contador = 0;
-boolean s=true;
+boolean s = true;
 
 
 void setup() {
 
+  // Portada - Configuracion de la pantalla
   if (width-height>300) {
-    a=400;
+    a = 400;
   } else {
-    a=width-height;
+    a = width-height;
   }
-  b[0] = new Btom ( height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Jugar");
-  b[1] = new Btom (5*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Modo Libre");
-  b[2] = new Btom (9*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Instrucciones");
+
+  // Creacion de los 3 botones
+  b[0] = new Btom (width-(width/3), height-(height/3)*2.5, width/4, height/10, color(0, 128, 255), "Jugar Problemas");
+  b[1] = new Btom (width-(width/3), height-(height/3)*2, width/4, height/10, color(0, 128, 255), "Modo Libre");
+  b[2] = new Btom (width-(width/3), height-(height/4), width/4, height/10, color(0, 128, 255), "Instrucciones");
+
+  // Carga e Inicio de las imagenes de la portada
   ini = loadImage("a1.jpg");
 
-  // Ubicación
-  Mx=new int[columna][fila];
-  My=new int[columna][fila];
-  for (int i =0; i<8; i++) {
-    for (int j =0; j<8; j++) {
-      Mx[i][j]=a+(height/8)*j;
-      My[i][j]=(height/8)*t;
+  for (int i = 0; i < 86; i++) {
+
+    String ii = str(i);
+    String s = ".gif";
+    gf[i] = loadImage(ii+s);
+  }
+
+  // Ubicación - Creacion de la matriz de cordenadas
+  Mx = new int[columna][fila];
+  My = new int[columna][fila];
+
+  for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+      Mx[i][j] = a+(height/8)*j;
+      My[i][j] = (height/8)*t;
     }
     t--;
   }
 
-  //Piezas 
-
+  //Piezas - Creacion de arreglo de Piezas y carga de las imagenes
   PiezasB = new Piezas[16];
   PiezasN = new Piezas[16];
+
   background(0);
   fullScreen();
   img = loadImage("t1.png");
@@ -111,69 +127,126 @@ void setup() {
   m3 = loadImage("m3.png");
   jm = loadImage("jm.png");
   mal = loadImage("mal.png");
+
+  // Definicion de las primeras posiciones
   problemas(n);
 }
 
 
 void draw() {
+
   background(0);
   image(ini, 0, 0, width, height);
+
   for (Btom i : b) 
     i.pintar();
-  tc=millis()/1000;
+  tc = millis()/1000;
+
   if (tc < 86) {
     ttc=tc;
   }
 
-  if (jc == true) {
+  image(gf[ttc], width/15, height/8, width-width/2, height-height/5);
+
+  if (bot1 == true) {
+
     background(0);
     image(img, a, 0, height, height);
     verificar(n, 0);
     verificar(n, 1);
-    for (int i =0; i<j; i++) {
+    for (int i = 0; i<j; i++) {
       PiezasB[i].draw();
     }
-    for (int i =0; i<k; i++) {
+    for (int i = 0; i<k; i++) {
       PiezasN[i].draw();
     }
-
-    for (int i =0; i<j; i++) {
+    for (int i = 0; i<j; i++) {
       PiezasB[i].updateb(mouseX, mouseY);// ejecuta la translación para cada
     }
-    for (int i =0; i<k; i++) {
+    for (int i = 0; i<k; i++) {
       PiezasN[i].updaten(mouseX, mouseY);
     }
+  } 
+
+  if (bot2 == true) {
+
+    background(0);
+    image(img, a, 0, height, height);
+    for (int i = 0; i<j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i<k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i<j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);// ejecuta la translación para cada
+    }
+    for (int i = 0; i<k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    println("perro");
+  } 
+
+  if (bot3 == true) {
   }
+
 }
 
 
 
 void mousePressed() {    
 
+  //recorre el arreglo para que en clickby clickn se mire si esta encima y ha presionado
   if (Turno == true) {
-    for (int i = 0; i<j; i++) { //recorre el arreglo para que en clickb se mire si esta encima y ha presionado
+    for (int i = 0; i < j; i++) { 
       PiezasB[i].clickb(mouseX, mouseY);
     }
   } else if (Turno == false) {
-    for (int i =0; i<k; i++) {
+    for (int i = 0; i < k; i++) {
       PiezasN[i].clickn(mouseX, mouseY);
     }
   }
+
   if ( mouseButton == LEFT ) {
-    if (b[0].col()==color(255, 102, 102))
-      jc=true;
+    
+    if (b[0].col() == color(255, 102, 102)){
+      bot1 = true;
+      bot2 = false;
+      bot3 = false;
+      println("Boton1");
+    }
+
+    if (b[1].col() == color(255, 102, 102)){
+      bot1 = false;
+      bot2 = true;
+      bot3 = false;
+      problemas(16);
+      println("Boton2");
+    }
+
+    if (b[2].col() == color(255, 102, 102)){
+      bot1 = false;
+      bot2 = false;
+      bot3 = true;
+      println("Boton3");
+    }
   }
+
 }
 
 
 void keyPressed() {
-  if (jc == true) {
+  
+  if (bot1 == true) {
     n++;
     Turno=true;
     problemas(n);
   }
+  
 }
+
 void mouseMoved() {
+  
   for (int i =0; i<3; i++) {
     if (dist(mouseX, mouseY, b[i].trans.x+b[i].gn.x/2, b[i].trans.y+b[i].gn.y/2)<width/25) {
       b[i].setCol(color(255, 102, 102));
@@ -181,4 +254,5 @@ void mouseMoved() {
       b[i].setCol(color(0, 128, 255));
     }
   }
+  
 }
