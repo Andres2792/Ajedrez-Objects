@@ -41,7 +41,6 @@ int[][] My;
 Piezas[] PiezasB;
 Piezas[] PiezasN;
 PImage ini;
-PImage [] gf=new PImage [86];
 boolean jc=false;
 Btom[] b = new Btom [3];
 int tc;
@@ -58,15 +57,11 @@ void setup() {
   } else {
     a=width-height;
   }
-  b[0] = new Btom (width-(width/3), height-(height/3)*2.5, width/4, height/10, color(0, 128, 255), "Jugar");
-  b[1] = new Btom (width-(width/3), height-(height/3)*2, width/4, height/10, color(0, 128, 255), "Modo Libre");
-  b[2] = new Btom (width-(width/3), height-(height/4), width/4, height/10, color(0, 128, 255), "Instrucciones");
+  b[0] = new Btom ( height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Jugar");
+  b[1] = new Btom (5*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Modo Libre");
+  b[2] = new Btom (9*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Instrucciones");
   ini = loadImage("a1.jpg");
-  for (int i=0; i<86; i++) {
-    String ii = str(i);
-    String s=".gif";
-    gf[i] = loadImage(ii+s);
-  }
+
   // Ubicación
   Mx=new int[columna][fila];
   My=new int[columna][fila];
@@ -129,7 +124,7 @@ void draw() {
   if (tc < 86) {
     ttc=tc;
   }
-  image(gf[ttc], width/15, height/8, width-width/2, height-height/5);
+
   if (jc == true) {
     background(0);
     image(img, a, 0, height, height);
