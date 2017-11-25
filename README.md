@@ -63,4 +63,4 @@ Crear un programa en el que se facilite el aprendizaje del ajedrez.
 - Promover la practica del ajedrez.
 
 # Requisitos
-Para el desarrollo del proyecto se implementó Processing con sis librerias por default.
+Para el desarrollo del proyecto se implementó Processing con sus librerias por default.
