@@ -184,7 +184,6 @@ void draw() {
     for (int i = 0; i<k; i++) {
       PiezasN[i].updaten(mouseX, mouseY);
     }
-    println("perro");
   } 
 
   if (bot3 == true) {
