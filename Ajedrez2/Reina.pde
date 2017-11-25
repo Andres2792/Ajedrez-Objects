@@ -61,7 +61,7 @@ class Reina extends Piezas {
       }
     }
     if (mousePressed&&get(mouseX, mouseY)==#FA4417) {
-      cont++;
+      cont=2;
       println(get(mouseX, mouseY));
     }
     if (cont==2) {

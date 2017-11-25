@@ -45,7 +45,7 @@ class Torre extends Piezas {
       }
     }
     if (mousePressed) {
-      cont++;
+      cont=2;
       println(get(mouseX, mouseY));
       
     }
