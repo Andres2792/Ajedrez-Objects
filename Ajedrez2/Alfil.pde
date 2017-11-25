@@ -85,10 +85,10 @@ class Alfil extends Piezas {
       setTranslation(x, y);
       if (selectb==true) {
         selectb=false;
-        Turno=!Turno;
+        //Turno=!Turno;
       } else if (selectn==true) {
         selectn=false;
-        Turno=!Turno;
+        //Turno=!Turno;
       }
       cont=0;
     }
