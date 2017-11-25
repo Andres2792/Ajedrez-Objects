@@ -38,38 +38,38 @@ abstract class Piezas {
 
 
 
-  public void updateb(int x, int y) { // movimiento
-    x=7;
-    y=7;
+  public void updateb(int x, int y) { 
+    x = 7;
+    y = 7;
     if (selectb) {
-      for (int i=0; i<7; i++) {
-        if ((mouseX>a+(height/8)*i)&&(mouseX<a+(height/8)*(i+1))) {
-          x=i;
+      for (int i = 0; i < 7; i++) {
+        if ((mouseX > a+(height/8)*i) && (mouseX < a+(height/8)*(i+1))) {
+          x = i; 
         }
       }
-      for (int i=8; i>0; i--) {
-        if ((mouseY<(height/8)*(i))&&(mouseY>(height/8)*(i-1))) {
-          switch(i-1) {
+      for (int i = 8; i > 0; i--) {
+        if ((mouseY < (height/8)*(i)) && (mouseY > (height/8)*(i-1))) {
+          switch(i - 1) {
           case 7:
-            y=0;
+            y = 0;
             break;
           case 6:
-            y=1;
+            y = 1;
             break;
           case 5:
-            y=2;
+            y = 2;
             break;
           case 4:
-            y=3;
+            y = 3;
             break;
           case 3:
-            y=4;
+            y = 4;
             break;
           case 2:
-            y=5;
+            y = 5;
             break;
           case 1:
-            y=6;
+            y = 6;
             break;
           }
         }
@@ -78,37 +78,37 @@ abstract class Piezas {
     }
   }
   public void updaten(int x, int y) {
-    x=7;
-    y=7;
+    x = 7;
+    y = 7;
     if (selectn) {
-      for (int i=0; i<7; i++) {
-        if ((mouseX>a+(height/8)*i)&&(mouseX<a+(height/8)*(i+1))) {
-          x=i;
+      for (int i = 0; i < 7; i++) {
+        if ((mouseX > a+(height/8)*i) && (mouseX < a+(height/8)*(i+1))) {
+          x = i;
         }
       }
-      for (int i=8; i>0; i--) {
-        if ((mouseY<(height/8)*(i))&&(mouseY>(height/8)*(i-1))) {
-          switch(i-1) {
+      for (int i = 8; i > 0; i--) {
+        if ((mouseY < (height/8)*(i)) && (mouseY > (height/8)*(i-1))) {
+          switch(i - 1) {
           case 7:
-            y=0;
+            y = 0;
             break;
           case 6:
-            y=1;
+            y = 1;
             break;
           case 5:
-            y=2;
+            y = 2;
             break;
           case 4:
-            y=3;
+            y = 3;
             break;
           case 3:
-            y=4;
+            y = 4;
             break;
           case 2:
-            y=5;
+            y = 5;
             break;
           case 1:
-            y=6;
+            y = 6;
             break;
           }
         }
@@ -119,18 +119,18 @@ abstract class Piezas {
 
 
   public void clickb(int x, int y) {  
-    if (trans.x<x&&(trans.x+height/8)>x&&trans.y<y&&(trans.y+height/8)>y) { //verifica si esta encima de la pieza  
+    if (trans.x < x && (trans.x+height/8) > x && trans.y < y && (trans.y+height/8) > y) { //verifica si esta encima de la pieza  
       selectb = !selectb;
-      if (selectb==false && selectn==false){
-        Turno=!Turno;
+      if (selectb == false && selectn == false) {
+        Turno = !Turno;
       }
     }
   }
   public void clickn(int x, int y) {  
-    if (trans.x<x&&(trans.x+height/8)>x&&trans.y<y&&(trans.y+height/8)>y) { 
+    if (trans.x < x && (trans.x+height/8) > x && trans.y < y && (trans.y+height/8) > y) { 
       selectn = !selectn;
-      if (selectb==false && selectn==false) {
-        Turno=!Turno;
+      if (selectb == false && selectn == false) {
+        Turno = !Turno;
       }
     }
   }

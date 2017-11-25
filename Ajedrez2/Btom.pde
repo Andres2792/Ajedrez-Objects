@@ -2,14 +2,14 @@ class Btom {
   PVector trans;
   PVector gn;
   color col;
-  float scl=1;
+  float scl = 1;
   String str;
-  int Z=20;
+  int Z = 20;
   PFont t = createFont("LetterGothicStd", width/35);
   Btom(float x, float y, float h, float w, color c, String l) {
     trans = new PVector (x, y);
     gn = new PVector (h, w);
-    col=c;
+    col = c;
     str = l;
   }
 
@@ -24,7 +24,7 @@ class Btom {
     return col;
   }
   public void setCol(color s) {
-    col=s;
+    col = s;
   }
   public PVector trans() {
     return trans;

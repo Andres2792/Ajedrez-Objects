@@ -13,7 +13,7 @@ class Caballo extends Piezas {
 
   @Override
     void drawFigure(boolean dye) {
-    if (dye==true) {
+    if (dye == true) {
       image(cb, 0, 0, height/9, height/9);
     } else {
       image(cn, 0, 0, height/9, height/9);
@@ -23,10 +23,10 @@ class Caballo extends Piezas {
   @Override
     void move(int x, int y) {
 
-    PosX=x;
-    PosY=y;
+    PosX = x;
+    PosY = y;
 
-    if (dye==true) {
+    if (dye == true) {
       Turno = true;
     } else {
       Turno = false;

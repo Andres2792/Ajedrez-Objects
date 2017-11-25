@@ -34,6 +34,7 @@ boolean Turno = true;
 boolean bot1 = false;
 boolean bot2 = false;
 boolean bot3 = false;
+boolean inicio = true;
 int fila = 8;
 int columna = 8;
 int t = 7;
@@ -62,11 +63,11 @@ void setup() {
   }
 
   // Creacion de los 3 botones
-b[0] = new Btom ( height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Jugar");
-b[1] = new Btom (5*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Modo Libre");
-b[2] = new Btom (9*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Instrucciones");
- 
- // Carga e Inicio de las imagenes de la portada
+  b[0] = new Btom ( height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Jugar");
+  b[1] = new Btom (5*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Modo Libre");
+  b[2] = new Btom (9*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Instrucciones");
+
+  // Carga e Inicio de las imagenes de la portada
   ini = loadImage("a1.jpg");
 
   // Ubicación - Creacion de la matriz de cordenadas
@@ -130,10 +131,15 @@ void draw() {
   background(0);
   image(ini, 0, 0, width, height);
 
-  for (Btom i : b) 
-    i.pintar();
-  tc = millis()/1000;
-  
+  // Pinta los botones siempre que el inicio sea True
+  if (inicio == true) {
+    for (int i = 0; i < 3; i++) { 
+      b[i].pintar();
+      tc = millis()/1000;
+    }
+  }
+
+  // Realiza cierta accion dependiendo de que boton haya sido presionado 
   if (bot1 == true) {
 
     background(0);
@@ -147,7 +153,7 @@ void draw() {
       PiezasN[i].draw();
     }
     for (int i = 0; i<j; i++) {
-      PiezasB[i].updateb(mouseX, mouseY);// ejecuta la translación para cada
+      PiezasB[i].updateb(mouseX, mouseY);
     }
     for (int i = 0; i<k; i++) {
       PiezasN[i].updaten(mouseX, mouseY);
@@ -165,7 +171,7 @@ void draw() {
       PiezasN[i].draw();
     }
     for (int i = 0; i<j; i++) {
-      PiezasB[i].updateb(mouseX, mouseY);// ejecuta la translación para cada
+      PiezasB[i].updateb(mouseX, mouseY);
     }
     for (int i = 0; i<k; i++) {
       PiezasN[i].updaten(mouseX, mouseY);
@@ -174,7 +180,6 @@ void draw() {
 
   if (bot3 == true) {
   }
-
 }
 
 
@@ -192,46 +197,50 @@ void mousePressed() {
     }
   }
 
-  if ( mouseButton == LEFT ) {
-    
-    if (b[0].col() == color(255, 102, 102)){
+  // Pone el estado de seleccion del boton en verdadero si se selecciono y el resto en falso y ademas pone inicio en falso
+  if ( mouseButton == LEFT && inicio == true ) {
+
+    if (b[0].col() == color(255, 102, 102)) {
       bot1 = true;
       bot2 = false;
       bot3 = false;
       println("Boton1");
+      inicio = false;
     }
 
-    if (b[1].col() == color(255, 102, 102)){
+    if (b[1].col() == color(255, 102, 102)) {
       bot1 = false;
       bot2 = true;
       bot3 = false;
       problemas(16);
       println("Boton2");
+      inicio = false;
     }
 
-    if (b[2].col() == color(255, 102, 102)){
+    if (b[2].col() == color(255, 102, 102)) {
       bot1 = false;
       bot2 = false;
       bot3 = true;
       println("Boton3");
+      inicio = false;
     }
   }
-
 }
 
 
 void keyPressed() {
-  
+
+  // Cambia el problema al presionar una tecla y al estar seleccionado el boton 1 de Juego problemas
   if (bot1 == true) {
     n++;
     Turno=true;
     problemas(n);
   }
-  
 }
 
 void mouseMoved() {
-  
+
+  // Cambia el color de los botones siempre que el mouse este encima del boton
   for (int i =0; i<3; i++) {
     if (dist(mouseX, mouseY, b[i].trans.x+b[i].gn.x/2, b[i].trans.y+b[i].gn.y/2)<width/25) {
       b[i].setCol(color(255, 102, 102));
@@ -239,5 +248,4 @@ void mouseMoved() {
       b[i].setCol(color(0, 128, 255));
     }
   }
-  
 }
