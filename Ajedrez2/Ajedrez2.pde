@@ -30,6 +30,8 @@ PImage m2;
 PImage m3;
 PImage jm;
 PImage mal;
+PImage i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13;
+PImage i[]= new PImage[13];
 boolean Turno = true;
 boolean bot1 = false;
 boolean bot2 = false;
@@ -48,9 +50,11 @@ PImage ini;
 Btom[] b = new Btom [3];
 int tc;
 int ttc;
-int a, c;
-int contador = 0;
+int a, c, p=0;
+int contador =0;
 boolean s = true;
+int cont=0;
+
 
 
 void setup() {
@@ -120,6 +124,32 @@ void setup() {
   m3 = loadImage("m3.png");
   jm = loadImage("jm.png");
   mal = loadImage("mal.png");
+  i1 = loadImage("1.png");
+  i2 = loadImage("2.png");
+  i3 = loadImage("3.png");
+  i4 = loadImage("4.png");
+  i5 = loadImage("Rey.png");
+  i6 = loadImage("Peon.png");
+  i7 = loadImage("Dama.png");
+  i8 = loadImage("Alfil.png");
+  i9 = loadImage("Torre.png");
+  i10 = loadImage("Caballo.png");
+  i11 = loadImage("5.png");
+  i12 = loadImage("6.png");
+  i13 = loadImage("7.png");
+  i[0]= i1;
+  i[1]= i2;
+  i[2]= i3;
+  i[3]= i4;
+  i[4]= i5;
+  i[5]= i6;
+  i[6]= i7;
+  i[7]= i8;
+  i[8]= i9;
+  i[9]= i10;
+  i[10]= i11;
+  i[11]= i12;
+  i[12]= i13;
 
   // Definicion de las primeras posiciones
   problemas(n);
@@ -138,7 +168,6 @@ void draw() {
       tc = millis()/1000;
     }
   }
-
   // Realiza cierta accion dependiendo de que boton haya sido presionado 
   if (bot1 == true) {
 
@@ -179,6 +208,25 @@ void draw() {
   } 
 
   if (bot3 == true) {
+    if (keyPressed) {
+      p++;
+    }
+    if (p==13) {
+      bot3=false; 
+      background(0);
+      image(ini, 0, 0, width, height);
+      inicio=true;
+      // Pinta los botones siempre que el inicio sea True
+      if (inicio == true) {
+        for (int i = 0; i < 3; i++) { 
+          b[i].pintar();
+          tc = millis()/1000;
+        }
+      }
+    } else {
+      background(0);
+      image(i[p], 0, 0, width, height);
+    }
   }
 }
 

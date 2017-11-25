@@ -1,4 +1,4 @@
-﻿# Ajedrez: Tácticas y estrategia.
+﻿# Ajedrez: Problemas.
 
 # Integrantes
 
@@ -58,25 +58,9 @@ Crear un programa en el que se facilite el aprendizaje del ajedrez.
 
 ## Específicos
 
-- Diseñar tacticas, problemas y fantasías como alternativa en el aprendizaje del deporte.
+- Diseñar problemas como alternativa en el aprendizaje del deporte.
 - Facilitar el apredizaje del ajedrez.
 - Promover la practica del ajedrez.
 
 # Requisitos
-Usaremos Processing y de este manejaremos las librerias listadas acontinuacion:
-### Hardware
-- Ketai
-### I/O
-- Simple Multi-Touch (SMT)
-- ezGesturesGifAnimation
-- GifAnimation
-- OBJExport
-### Simulation
-- AI for 2D Games
-### Utilities
-- Mouse 2D Transformations
-### Math
-- gwoptics
-- SelectFile
-- Drop
-
+Para el desarrollo del proyecto se implementó Processing con sus librerias por default.

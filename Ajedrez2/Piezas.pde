@@ -39,82 +39,110 @@ abstract class Piezas {
 
 
   public void updateb(int x, int y) { 
-    x = 7;
-    y = 7;
     if (selectb) {
-      for (int i = 0; i < 7; i++) {
-        if ((mouseX > a+(height/8)*i) && (mouseX < a+(height/8)*(i+1))) {
-          x = i; 
-        }
-      }
-      for (int i = 8; i > 0; i--) {
-        if ((mouseY < (height/8)*(i)) && (mouseY > (height/8)*(i-1))) {
-          switch(i - 1) {
-          case 7:
-            y = 0;
-            break;
-          case 6:
-            y = 1;
-            break;
-          case 5:
-            y = 2;
-            break;
-          case 4:
-            y = 3;
-            break;
-          case 3:
-            y = 4;
-            break;
-          case 2:
-            y = 5;
-            break;
-          case 1:
-            y = 6;
-            break;
-          }
-        }
+      x = int(trans.x-a)/( height/8);
+      y = int(trans.y)/( height/8);
+      switch(y) {
+      case 7:
+        y = 0;
+        break;
+      case 6:
+        y = 1;
+        break;
+      case 5:
+        y = 2;
+        break;
+      case 4:
+        y = 3;
+        break;
+      case 3:
+        y = 4;
+        break;
+      case 2:
+        y = 5;
+        break;
+      case 1:
+        y = 6;
+        break;
+      default:
+        y=7;
       } 
-      setTranslation(x, y);
+      println(x);
+      println(y);
+      move(x, y);
     }
   }
   public void updaten(int x, int y) {
-    x = 7;
-    y = 7;
+     x=7;
+    y=7;
     if (selectn) {
-      for (int i = 0; i < 7; i++) {
-        if ((mouseX > a+(height/8)*i) && (mouseX < a+(height/8)*(i+1))) {
-          x = i;
+      for (int i=0; i<7; i++) {
+        if ((mouseX>a+(height/8)*i)&&(mouseX<a+(height/8)*(i+1))) {
+          x=i;
         }
       }
-      for (int i = 8; i > 0; i--) {
-        if ((mouseY < (height/8)*(i)) && (mouseY > (height/8)*(i-1))) {
-          switch(i - 1) {
+      for (int i=8; i>0; i--) {
+        if ((mouseY<(height/8)*(i))&&(mouseY>(height/8)*(i-1))) {
+          switch(i-1) {
           case 7:
-            y = 0;
+            y=0;
             break;
           case 6:
-            y = 1;
+            y=1;
             break;
           case 5:
-            y = 2;
+            y=2;
             break;
           case 4:
-            y = 3;
+            y=3;
             break;
           case 3:
-            y = 4;
+            y=4;
             break;
           case 2:
-            y = 5;
+            y=5;
             break;
           case 1:
-            y = 6;
+            y=6;
             break;
           }
         }
       } 
       setTranslation(x, y);
     }
+    
+    /*if (selectn) {
+      x = int(trans.x-a)/( height/8);
+      y = int(trans.y)/( height/8);
+      switch(y) {
+      case 7:
+        y = 0;
+        break;
+      case 6:
+        y = 1;
+        break;
+      case 5:
+        y = 2;
+        break;
+      case 4:
+        y = 3;
+        break;
+      case 3:
+        y = 4;
+        break;
+      case 2:
+        y = 5;
+        break;
+      case 1:
+        y = 6;
+        break;
+      default:
+        y=7;
+      } 
+      println(x);
+      println(y);
+      move(x, y);
+    }*/
   } 
 
 
