@@ -49,8 +49,10 @@ Btom[] b = new Btom [3];
 int tc;
 int ttc;
 int a, c;
-int contador = 0;
+int contador =0;
 boolean s = true;
+int cont=0;
+
 
 
 void setup() {
