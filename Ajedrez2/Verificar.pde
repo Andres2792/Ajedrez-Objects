@@ -26,48 +26,50 @@ int verificar(int n, int contador) {
         Turno = true;
       }
     }
-  } else if (n == 2) {
-    image(p2, 0, 0, a, height-a/4);
+  } else if (n==2) {
+    image(p2, 0, 0, a, height-a/2);
     image(m2, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 3) {
-    image(p3, 0, 0, a, height-a/4);
+  } else if (n==3) {
+    image(p3, 0, 0, a, height-a/2);
     image(m2, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 4) {
+  } else if (n==4) {
     image(p4, 0, 0, a, height-a/4);
     image(m2, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 5) {
-    image(p5, 0, 0, a, height-a/4);
+  } else if (n==5) {
+    image(p5, 0, 0, a, height-a/1.5);
     image(m2, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 6) {
-    image(p6, 0, 0, a, height-a/4);
+  } else if (n==6) {
+    image(p6, 0, 0, a, height-a/1.3);
     image(m2, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 7) {
+  } else if (n==7) {
     image(p7, 0, 0, a, height-a/4);
     image(m2, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 8) {
+  } else if (n==8) {
     image(p8, 0, 0, a, height-a/4);
     image(m2, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 9) {
-    image(p9, 0, 0, a, height-a/4);
+  } else if (n==9) {
+    image(p9, 0, 0, a, height-a/1.5);
     image(m2, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 10) {
-    image(p10, 0, 0, a, height-a/4);
+  } else if (n==10) {
+    image(p10, 0, 0, a, height-a/1.5);
     image(m2, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 11) {
-    image(p11, 0, 0, a, height+10-a/4);
+  } else if (n==11) {
+    image(p11, 20, 0, a-30, height+10-a/5);
     image(m3, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 12) {
+  } else if (n==12) {
     image(p12, 0, 0, a, height-a/4);
     image(m3, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 13) {
+  } else if (n==13) {
     image(p13, 0, 0, a, height-a/4);
     image(m3, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 14) {
-    image(p14, 0, 0, a, height-a/4);
+  } else if (n==14) {
+    image(p14, 0, 0, a, height-a/1.5);
     image(m3, a/4, 7*height/8, a/2, a/4);
-  } else if (n == 15) {
-    image(p15, 0, 0, a, height-a/4);
+  } else if (n==15) {
+    image(p15, 0, 0, a, height-a/1.5);
     image(m3, a/4, 7*height/8, a/2, a/4);
   }
+
+
   return n;
 } 
