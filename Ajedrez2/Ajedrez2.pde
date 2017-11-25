@@ -186,7 +186,7 @@ void draw() {
 
 void mousePressed() {    
 
-  //recorre el arreglo para que en clickby clickn se mire si esta encima y ha presionado
+  //recorre el arreglo para que en clickb y clickn se mire si esta encima y ha presionado
   if (Turno == true) {
     for (int i = 0; i < j; i++) { 
       PiezasB[i].clickb(mouseX, mouseY);
