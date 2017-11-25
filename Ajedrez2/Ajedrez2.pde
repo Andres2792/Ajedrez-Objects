@@ -62,11 +62,11 @@ void setup() {
   }
 
   // Creacion de los 3 botones
-  b[0] = new Btom (width-(width/3), height-(height/3)*2.5, width/4, height/10, color(0, 128, 255), "Jugar Problemas");
-  b[1] = new Btom (width-(width/3), height-(height/3)*2, width/4, height/10, color(0, 128, 255), "Modo Libre");
-  b[2] = new Btom (width-(width/3), height-(height/4), width/4, height/10, color(0, 128, 255), "Instrucciones");
-
-  // Carga e Inicio de las imagenes de la portada
+b[0] = new Btom ( height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Jugar");
+b[1] = new Btom (5*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Modo Libre");
+b[2] = new Btom (9*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Instrucciones");
+ 
+ // Carga e Inicio de las imagenes de la portada
   ini = loadImage("a1.jpg");
 
   // Ubicación - Creacion de la matriz de cordenadas
