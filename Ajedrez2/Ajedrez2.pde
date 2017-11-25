@@ -44,7 +44,6 @@ int[][] My;
 Piezas[] PiezasB;
 Piezas[] PiezasN;
 PImage ini;
-PImage [] gf = new PImage [86];
 Btom[] b = new Btom [3];
 int tc;
 int ttc;
@@ -69,13 +68,6 @@ void setup() {
 
   // Carga e Inicio de las imagenes de la portada
   ini = loadImage("a1.jpg");
-
-  for (int i = 0; i < 86; i++) {
-
-    String ii = str(i);
-    String s = ".gif";
-    gf[i] = loadImage(ii+s);
-  }
 
   // Ubicación - Creacion de la matriz de cordenadas
   Mx = new int[columna][fila];
@@ -141,13 +133,7 @@ void draw() {
   for (Btom i : b) 
     i.pintar();
   tc = millis()/1000;
-
-  if (tc < 86) {
-    ttc=tc;
-  }
-
-  image(gf[ttc], width/15, height/8, width-width/2, height-height/5);
-
+  
   if (bot1 == true) {
 
     background(0);
