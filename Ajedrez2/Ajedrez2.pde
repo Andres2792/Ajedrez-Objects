@@ -56,10 +56,10 @@ boolean s = true;
 void setup() {
 
   // Portada - Configuracion de la pantalla
-  if (width-height>300) {
+  if (width-height > 300) {
     a = 400;
   } else {
-    a = width-height;
+    a = width - height;
   }
 
   // Creacion de los 3 botones
@@ -146,16 +146,16 @@ void draw() {
     image(img, a, 0, height, height);
     verificar(n, 0);
     verificar(n, 1);
-    for (int i = 0; i<j; i++) {
+    for (int i = 0; i < j; i++) {
       PiezasB[i].draw();
     }
-    for (int i = 0; i<k; i++) {
+    for (int i = 0; i < k; i++) {
       PiezasN[i].draw();
     }
-    for (int i = 0; i<j; i++) {
+    for (int i = 0; i < j; i++) {
       PiezasB[i].updateb(mouseX, mouseY);
     }
-    for (int i = 0; i<k; i++) {
+    for (int i = 0; i < k; i++) {
       PiezasN[i].updaten(mouseX, mouseY);
     }
   } 
@@ -164,16 +164,16 @@ void draw() {
 
     background(0);
     image(img, a, 0, height, height);
-    for (int i = 0; i<j; i++) {
+    for (int i = 0; i < j; i++) {
       PiezasB[i].draw();
     }
-    for (int i = 0; i<k; i++) {
+    for (int i = 0; i < k; i++) {
       PiezasN[i].draw();
     }
-    for (int i = 0; i<j; i++) {
+    for (int i = 0; i < j; i++) {
       PiezasB[i].updateb(mouseX, mouseY);
     }
-    for (int i = 0; i<k; i++) {
+    for (int i = 0; i < k; i++) {
       PiezasN[i].updaten(mouseX, mouseY);
     }
   } 
@@ -241,8 +241,8 @@ void keyPressed() {
 void mouseMoved() {
 
   // Cambia el color de los botones siempre que el mouse este encima del boton
-  for (int i =0; i<3; i++) {
-    if (dist(mouseX, mouseY, b[i].trans.x+b[i].gn.x/2, b[i].trans.y+b[i].gn.y/2)<width/25) {
+  for (int i = 0; i < 3; i++) {
+    if (dist(mouseX, mouseY, b[i].trans.x + b[i].gn.x /2, b[i].trans.y + b[i].gn.y /2) < width/25) {
       b[i].setCol(color(255, 102, 102));
     } else {
       b[i].setCol(color(0, 128, 255));
