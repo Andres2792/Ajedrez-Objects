@@ -56,7 +56,7 @@ class Caballo extends Piezas {
       }
  
     if (mousePressed) {
-      cont=2;
+      cont++;
       println(get(mouseX, mouseY));
     }
     if (cont==2&&get(mouseX, mouseY)==#FA4417) {
