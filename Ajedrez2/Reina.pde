@@ -60,13 +60,9 @@ class Reina extends Piezas {
         rect(Mx[y-i][x], My[y-i][x], height/8, height/8);
       }
     }
-<<<<<<< HEAD
-    if (mousePressed && get(mouseX, mouseY) == #FA4417) {
-      cont++;
-=======
+
     if (mousePressed&&get(mouseX, mouseY)==#FA4417) {
       cont=2;
->>>>>>> da4af5c1dcdf47485d9433690414f00ef55401f3
       println(get(mouseX, mouseY));
     }
     if (cont == 2) {

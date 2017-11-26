@@ -49,11 +49,7 @@ class Alfil extends Piezas {
     }
     
     if (mousePressed) {
-<<<<<<< HEAD
       cont = 2;
-=======
-      cont=2;
->>>>>>> da4af5c1dcdf47485d9433690414f00ef55401f3
       println(get(mouseX, mouseY));
     
     if (cont == 2 && get(mouseX, mouseY) == #FA4417) {

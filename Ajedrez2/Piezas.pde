@@ -74,7 +74,7 @@ abstract class Piezas {
   }
   public void updaten(int x, int y) {
     if (selectn) {
-<<<<<<< HEAD
+
      x = int(trans.x-a)/( height/8);
      y = int(trans.y)/( height/8);
      switch(y) {
@@ -106,39 +106,7 @@ abstract class Piezas {
      println(y);
      move(x, y);
      }
-=======
-      x = int(trans.x-a)/( height/8);
-      y = int(trans.y)/( height/8);
-      switch(y) {
-      case 7:
-        y = 0;
-        break;
-      case 6:
-        y = 1;
-        break;
-      case 5:
-        y = 2;
-        break;
-      case 4:
-        y = 3;
-        break;
-      case 3:
-        y = 4;
-        break;
-      case 2:
-        y = 5;
-        break;
-      case 1:
-        y = 6;
-        break;
-      default:
-        y=7;
-      } 
-      println(x);
-      println(y);
-      move(x, y);
-    }
->>>>>>> da4af5c1dcdf47485d9433690414f00ef55401f3
+
   } 
 
 

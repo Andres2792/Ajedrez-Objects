@@ -63,11 +63,9 @@ class Rey extends Piezas {
       cont=2;
       println(get(mouseX, mouseY));
     }
-<<<<<<< HEAD
-    if (cont == 2 && get(mouseX,mouseY) == #FA4417) {
-=======
+
+
     if (cont==2&&get(mouseX, mouseY)==#FA4417) {
->>>>>>> da4af5c1dcdf47485d9433690414f00ef55401f3
       for (int j = 0; j < 8; j++) {
         if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
           x = j;
@@ -104,21 +102,13 @@ class Rey extends Piezas {
         }
       } 
       setTranslation(x, y);
-<<<<<<< HEAD
-      if (selectb == true) {
-        selectb = false;
-        Turno =! Turno;
-      } else if (selectn == true) {
-        selectn = false;
-        Turno =! Turno;
-=======
+
       if (selectb==true) {
         selectb=false;
-        //Turno=!Turno;
+        Turno=!Turno;
       } else if (selectn==true) {
         selectn=false;
-        //Turno=!Turno;
->>>>>>> da4af5c1dcdf47485d9433690414f00ef55401f3
+        Turno=!Turno;
       }
       cont = 0;
     }
