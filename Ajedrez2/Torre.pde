@@ -26,24 +26,10 @@ class Torre extends Piezas {
 
   @Override
     void move(int x, int y) {
-    for (int i = 1; i < 8; i++) {
-      if ((x - i) >= 0) {
-        fill(#FA4417);
-        rect(Mx[y][x-i], My[y][x-i], height/8, height/8);
-      }
-      if ((x + i) < 8) {
-        fill(#FA4417);
-        rect(Mx[y][x+i], My[y][x+i], height/8, height/8);
-      }
-      if ((y + i) < 8) {
-        fill(#FA4417);
-        rect(Mx[y+i][x], My[y+i][x], height/8, height/8);
-      }
-      if ((y - i) >= 0) {
-        fill(#FA4417);
-        rect(Mx[y-i][x], My[y-i][x], height/8, height/8);
-      }
-    }
+    arriba(x, y, selectb);
+    abajo(x, y, selectb);
+    izq(x, y, selectb);
+    der(x, y, selectb);
     if (mousePressed) {
 
       if (get(mouseX, mouseY) == #FA4417) {

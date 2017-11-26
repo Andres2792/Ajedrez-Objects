@@ -24,30 +24,10 @@ class Alfil extends Piezas {
 
   @Override
     void move(int x, int y) {
-
-    for (int i = 1; i < 8; i++) {
-
-      // Creacion de la Diagonal Inferior Izquierda del alfil
-      if ((y - i) >= 0 && (x - i) >= 0) {
-        fill(#FA4417);
-        rect(Mx[y-i][x-i], My[y-i][x-i], height/8, height/8);
-      }
-      // Creacion de la Diagonal Superior Derecha del alfil
-      if ((y + i) < 8 && (x + i) < 8) {
-        fill(#FA4417);
-        rect(Mx[y+i][x+i], My[y+i][x+i], height/8, height/8);
-      }
-      // Creacion de la Diagonal Superior Izquierda del alfil
-      if ((y + i) < 8 && (x - i) >= 0) {
-        fill(#FA4417);
-        rect(Mx[y+i][x-i], My[y+i][x-i], height/8, height/8);
-      }
-      // Creacion de la Diagonal Inferior Derecha del alfil
-      if ((y - i) >= 0 && (x + i) < 8) {
-        fill(#FA4417);
-        rect(Mx[y-i][x+i], My[y-i][x+i], height/8, height/8);
-      }
-    }
+diagii(x, y, selectb);
+    diagid(x, y, selectb);
+    diagsi(x, y, selectb);
+    diagsd(x, y, selectb);
 
     if (mousePressed == true && get(mouseX, mouseY) == #FA4417) {
 
