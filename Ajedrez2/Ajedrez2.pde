@@ -31,7 +31,7 @@ PImage m3;
 PImage jm;
 PImage mal;
 PImage i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13;
-PImage i[]= new PImage[13];
+PImage i[] = new PImage[13];
 boolean Turno = true;
 boolean bot1 = false;
 boolean bot2 = false;
@@ -50,10 +50,10 @@ PImage ini;
 Btom[] b = new Btom [3];
 int tc;
 int ttc;
-int a, c, p=0;
-int contador =0;
+int a, c, p = 0;
+int contador = 0;
 boolean s = true;
-int cont=0;
+int cont = 0;
 
 
 
@@ -124,6 +124,8 @@ void setup() {
   m3 = loadImage("m3.png");
   jm = loadImage("jm.png");
   mal = loadImage("mal.png");
+  
+  // Creacion de arreglo de Instrucciones y Carga imagenes de Instrucciones
   i1 = loadImage("1.png");
   i2 = loadImage("2.png");
   i3 = loadImage("3.png");
@@ -208,14 +210,18 @@ void draw() {
   } 
 
   if (bot3 == true) {
+    
     if (keyPressed) {
       p++;
     }
-    if (p==13) {
-      bot3=false; 
+    
+    if (p == 13) {
+      // Vuelve al menu cuando no hay mas instrucciones
+      bot3 = false; 
       background(0);
       image(ini, 0, 0, width, height);
-      inicio=true;
+      inicio = true;
+      
       // Pinta los botones siempre que el inicio sea True
       if (inicio == true) {
         for (int i = 0; i < 3; i++) { 
@@ -224,6 +230,7 @@ void draw() {
         }
       }
     } else {
+      // Pinta la instruccion (imagen) almacenada en la pocicion del arreglo i[p]
       background(0);
       image(i[p], 0, 0, width, height);
     }

@@ -26,30 +26,30 @@ class Torre extends Piezas {
 
   @Override
     void move(int x, int y) {
-    for (int i=1; i<8; i++) {
-      if (x-i>=0) {
+    for (int i = 1; i < 8; i++) {
+      if ((x - i) >= 0) {
         fill(#FA4417);
         rect(Mx[y][x-i], My[y][x-i], height/8, height/8);
       }
-      if (x+i<8) {
+      if ((x + i) < 8) {
         fill(#FA4417);
         rect(Mx[y][x+i], My[y][x+i], height/8, height/8);
       }
-      if (y+i<8) {
+      if ((y + i) < 8) {
         fill(#FA4417);
         rect(Mx[y+i][x], My[y+i][x], height/8, height/8);
       }
-      if (y-i>=0) {
+      if ((y - i) >= 0) {
         fill(#FA4417);
         rect(Mx[y-i][x], My[y-i][x], height/8, height/8);
       }
     }
     if (mousePressed) {
-      cont++;
+      cont=2;
       println(get(mouseX, mouseY));
       
     }
-    if (cont==2&&get(mouseX,mouseY)==#FA4417) {
+    if (cont == 2 && get(mouseX,mouseY) == #FA4417) {
       for (int j = 0; j < 8; j++) {
         if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
           x = j;
@@ -86,14 +86,14 @@ class Torre extends Piezas {
         }
       } 
       setTranslation(x, y);
-      if (selectb==true) {
-        selectb=false;
-        Turno=!Turno;
-      } else if (selectn==true) {
-        selectn=false;
-        Turno=!Turno;
+      if (selectb == true) {
+        selectb = false;
+        Turno =! Turno;
+      } else if (selectn == true) {
+        selectn = false;
+        Turno =! Turno;
       }
-      cont=0;
+      cont = 0;
     }
 
 

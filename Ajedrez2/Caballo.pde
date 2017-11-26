@@ -22,44 +22,44 @@ class Caballo extends Piezas {
 
   @Override
     void move(int x, int y) {
-      if (y-2>=0&&x-1>=0) {
+      if ((y - 2) >= 0 && (x - 1) >= 0) {
         fill(#FA4417);
         rect(Mx[y-2][x-1], My[y-2][x-1], height/8, height/8);
       }
-      if (y-2>=0&&x+1<8) {
+      if ((y - 2) >= 0 && (x + 1) < 8) {
         fill(#FA4417);
         rect(Mx[y-2][x+1], My[y-2][x+1], height/8, height/8);
       }
-      if (y-1>=0&&x+2<8) {
+      if ((y - 1) >= 0 && (x + 2) < 8) {
         fill(#FA4417);
         rect(Mx[y-1][x+2], My[y-1][x+2], height/8, height/8);
       }
-      if (y+1<8&&x+2<8) {
+      if ((y + 1) < 8 && (x + 2) < 8) {
         fill(#FA4417);
         rect(Mx[y+1][x+2], My[y+1][x+2], height/8, height/8);
       }
-      if (y+2<8&&x-1>=0) {
+      if ((y + 2) < 8 && (x - 1) >= 0) {
         fill(#FA4417);
         rect(Mx[y+2][x-1], My[y+2][x-1], height/8, height/8);
       }
-      if (y+2<8&&x+1<8) {
+      if ((y + 2) < 8 && (x + 1) < 8) {
         fill(#FA4417);
         rect(Mx[y+2][x+1], My[y+2][x+1], height/8, height/8);
       }
-      if (y-1>=0&&x-2>=0) {
+      if ((y - 1) >= 0 && (x - 2) >= 0) {
         fill(#FA4417);
         rect(Mx[y-1][x-2], My[y-1][x-2], height/8, height/8);
       }
-      if (y+1<8&&x-2>=0) {
+      if ((y + 1) < 8 && (x - 2) >= 0) {
         fill(#FA4417);
         rect(Mx[y+1][x-2], My[y+1][x-2], height/8, height/8);
       }
  
     if (mousePressed) {
-      cont++;
+      cont=2;
       println(get(mouseX, mouseY));
     }
-    if (cont==2&&get(mouseX, mouseY)==#FA4417) {
+    if (cont == 2 && get(mouseX, mouseY) == #FA4417) {
       for (int j = 0; j < 8; j++) {
         if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
           x = j;
@@ -96,14 +96,14 @@ class Caballo extends Piezas {
         }
       } 
       setTranslation(x, y);
-      if (selectb==true) {
-        selectb=false;
-        Turno=!Turno;
-      } else if (selectn==true) {
-        selectn=false;
-        Turno=!Turno;
+      if (selectb == true) {
+        selectb = false;
+        Turno =! Turno;
+      } else if (selectn == true) {
+        selectn = false;
+        Turno =! Turno;
       }
-      cont=0;
+      cont = 0;
     }
 
     if (dye == true) {

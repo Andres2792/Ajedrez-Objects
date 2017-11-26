@@ -23,8 +23,8 @@ class Peon extends Piezas {
 
   @Override
     void move(int x, int y) {
-    if (selectb==true) {
-      if (y+6==7) {
+    if (selectb == true) {
+      if ((y + 6) == 7) {
         fill(#FA4417);
         rect(Mx[y+1][x], My[y+1][x], height/8, height/8);
         rect(Mx[y+2][x], My[y+2][x], height/8, height/8);
@@ -36,23 +36,26 @@ class Peon extends Piezas {
       }
 
       
-    } else if (selectn==true) {
-      if (y+1==7) {
+    } 
+    if (selectn == true) {
+      if ((y + 1) == 7) {
         fill(#FA4417);
         rect(Mx[y-1][x], My[y-1][x], height/8, height/8);
         rect(Mx[y-2][x], My[y-2][x], height/8, height/8);
       } else {
-        if (y-1>=0) {
+        if ((y - 1) >= 0) {
           fill(#FA4417);
           rect(Mx[y-1][x], My[y-1][x], height/8, height/8);
         }
       }
     }
+    
     if (mousePressed) {
-        cont++;
+        cont=2;
         println(get(mouseX, mouseY));
       }
-      if (cont==2&&get(mouseX, mouseY)==#FA4417) {
+      
+      if (cont == 2 && get(mouseX, mouseY) == #FA4417) {
         for (int j = 0; j < 8; j++) {
           if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
             x = j;
@@ -89,8 +92,8 @@ class Peon extends Piezas {
           }
         } 
         setTranslation(x, y);
-        selectb=false;
-        cont=0;
+        selectb = false;
+        cont = 0;
       }
     if (dye == true) {
       Turno = true;

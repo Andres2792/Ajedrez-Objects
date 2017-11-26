@@ -26,44 +26,48 @@ class Rey extends Piezas {
 
   @Override
     void move(int x, int y) {
-    if (y-1>=0&&x-1>=0) {
+    if ((y - 1) >= 0 && (x - 1) >= 0) {
       fill(#FA4417);
       rect(Mx[y-1][x-1], My[y-1][x-1], height/8, height/8);
     }
-    if (y+1<8&&x+1<8) {
+    if ((y + 1) < 8 && (x + 1) < 8) {
       fill(#FA4417);
       rect(Mx[y+1][x+1], My[y+1][x+1], height/8, height/8);
     }
-    if (y+1<8&&x-1>=0) {
+    if ((y + 1) < 8 && (x - 1) >= 0) {
       fill(#FA4417);
       rect(Mx[y+1][x-1], My[y+1][x-1], height/8, height/8);
     }
-    if (y-1>=0&&x+1<8) {
+    if ((y - 1) >= 0 && (x + 1) < 8) {
       fill(#FA4417);
       rect(Mx[y-1][x+1], My[y-1][x+1], height/8, height/8);
     }
-    if (x-1>=0) {
+    if ((x - 1) >= 0) {
       fill(#FA4417);
       rect(Mx[y][x-1], My[y][x-1], height/8, height/8);
     }
-    if (x+1<8) {
+    if ((x + 1) < 8) {
       fill(#FA4417);
       rect(Mx[y][x+1], My[y][x+1], height/8, height/8);
     }
-    if (y+1<8) {
+    if ((y + 1) < 8) {
       fill(#FA4417);
       rect(Mx[y+1][x], My[y+1][x], height/8, height/8);
     }
-    if (y-1>=0) {
+    if ((y - 1) >= 0) {
       fill(#FA4417);
       rect(Mx[y-1][x], My[y-1][x], height/8, height/8);
     }
 
-    if (mousePressed) {
-      cont++;
+    if (mousePressed&&get(mouseX, mouseY)==#FA4417) {
+      cont=2;
       println(get(mouseX, mouseY));
     }
-    if (cont==2&&get(mouseX,mouseY)==#FA4417) {
+<<<<<<< HEAD
+    if (cont == 2 && get(mouseX,mouseY) == #FA4417) {
+=======
+    if (cont==2&&get(mouseX, mouseY)==#FA4417) {
+>>>>>>> da4af5c1dcdf47485d9433690414f00ef55401f3
       for (int j = 0; j < 8; j++) {
         if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
           x = j;
@@ -100,16 +104,25 @@ class Rey extends Piezas {
         }
       } 
       setTranslation(x, y);
+<<<<<<< HEAD
+      if (selectb == true) {
+        selectb = false;
+        Turno =! Turno;
+      } else if (selectn == true) {
+        selectn = false;
+        Turno =! Turno;
+=======
       if (selectb==true) {
         selectb=false;
-        Turno=!Turno;
+        //Turno=!Turno;
       } else if (selectn==true) {
         selectn=false;
-        Turno=!Turno;
+        //Turno=!Turno;
+>>>>>>> da4af5c1dcdf47485d9433690414f00ef55401f3
       }
-      cont=0;
+      cont = 0;
     }
-
+    
 
     if (dye == true) {
       Turno = true;
