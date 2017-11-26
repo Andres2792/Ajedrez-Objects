@@ -61,57 +61,58 @@ class Reina extends Piezas {
       }
     }
 
-    if (mousePressed&&get(mouseX, mouseY)==#FA4417) {
-      for (int j = 0; j < 8; j++) {
-        if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
-          x = j;
-        }
-      }
-      for (int j = 8; j > 0; j--) {
-        if ((mouseY < (height/8)*(j)) && (mouseY >= (height/8)*(j-1))) {
-          switch(j - 1) {
-          case 7:
-            y = 0;
-            break;
-          case 6:
-            y = 1;
-            break;
-          case 5:
-            y = 2;
-            break;
-          case 4:
-            y = 3;
-            break;
-          case 3:
-            y = 4;
-            break;
-          case 2:
-            y = 5;
-            break;
-          case 1:
-            y = 6;
-            break;
-          default:
-            y = 7;
-            break;
+    if (mousePressed == true && get(mouseX, mouseY) == #FA4417) {
+
+      if (true) {
+        for (int j = 0; j < 8; j++) {
+          if ((mouseX > a +(height/8)*j) && (mouseX <= a +(height/8)*(j+1))) {
+            x = j;
           }
         }
-      } 
-      setTranslation(x, y);
-      if (selectb == true) {
-        selectb = false;
-        Turno =! Turno;
-      } else if (selectn == true) {
-        selectn = false;
-        Turno =! Turno;
+        for (int j = 8; j > 0; j--) {
+          if ((mouseY < (height/8)*(j)) && (mouseY >= (height/8)*(j-1))) {
+            switch(j - 1) {
+            case 7:
+              y = 0;
+              break;
+            case 6:
+              y = 1;
+              break;
+            case 5:
+              y = 2;
+              break;
+            case 4:
+              y = 3;
+              break;
+            case 3:
+              y = 4;
+              break;
+            case 2:
+              y = 5;
+              break;
+            case 1:
+              y = 6;
+              break;
+            default:
+              y = 7;
+              break;
+            }
+          }
+        } 
+        // Generacion de el movimiento
+        setTranslation(x, y);
+        // Deselecion de ambos colores
+        if (selectb == true) {
+          selectb = false;
+          // Cambio de Turno 
+          Turno = false;
+        } 
+        if (selectn == true) {
+          selectn = false;
+          // Cambio de Turno 
+          Turno = true;
+        }
       }
-      cont = 0;
-    }
-
-    if (dye == true) {
-      Turno = true;
-    } else {
-      Turno = false;
     }
   }
 }

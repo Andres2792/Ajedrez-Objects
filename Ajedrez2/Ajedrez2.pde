@@ -1,4 +1,3 @@
-PImage img;
 PImage rb;
 PImage rn;
 PImage db;
@@ -28,6 +27,7 @@ PImage p14;
 PImage p15;
 PImage m2;
 PImage m3;
+PImage ml;
 PImage jm;
 PImage mal;
 PImage i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13;
@@ -92,7 +92,6 @@ void setup() {
 
   background(0);
   fullScreen();
-  img = loadImage("t1.png");
   rb = loadImage("rb.png");
   rn = loadImage("rn.png");
   db = loadImage("db.png");
@@ -124,6 +123,7 @@ void setup() {
   m3 = loadImage("m3.png");
   jm = loadImage("jm.png");
   mal = loadImage("mal.png");
+  ml = loadImage("ml.png");
   
   // Creacion de arreglo de Instrucciones y Carga imagenes de Instrucciones
   i1 = loadImage("1.png");
@@ -174,7 +174,7 @@ void draw() {
   if (bot1 == true) {
 
     background(0);
-    image(img, a, 0, height, height);
+    Tablero();
     verificar(n, 0);
     verificar(n, 1);
     for (int i = 0; i < j; i++) {
@@ -194,7 +194,8 @@ void draw() {
   if (bot2 == true) {
 
     background(0);
-    image(img, a, 0, height, height);
+    Tablero();
+    image(ml, 0, 0, a, height-a/2);
     for (int i = 0; i < j; i++) {
       PiezasB[i].draw();
     }
@@ -301,6 +302,29 @@ void mouseMoved() {
       b[i].setCol(color(255, 102, 102));
     } else {
       b[i].setCol(color(0, 128, 255));
+    }
+  }
+}
+
+void Tablero() {
+  //tamaño de casillero
+  int ladoDeCuadro = height/8;
+  int puntoinicio = a;
+
+  //recorro la coordenada de Y para dibujar los cuadros
+  for (int c = 0; c < columna; c++) { 
+    for (int i = 0; i < fila; i++) {
+      //dibujo el casillero
+      rect( i * ladoDeCuadro + puntoinicio, c * ladoDeCuadro, ladoDeCuadro, ladoDeCuadro ); 
+
+      //Pinto de negro los casilleros pares
+      if ( (i+c) % 2 == 0 ) {
+        fill(0, 102, 204);
+        //pinto azarosamente de distintos colores el resto de los casilleros
+      } else {
+        fill( 185, 220, 255);
+      }
+      rect( i * ladoDeCuadro + puntoinicio, c * ladoDeCuadro, ladoDeCuadro, ladoDeCuadro );
     }
   }
 }

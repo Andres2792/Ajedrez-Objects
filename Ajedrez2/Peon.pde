@@ -48,7 +48,8 @@ class Peon extends Piezas {
       }
     }
 
-    if (mousePressed) {
+    if (mousePressed == true && get(mouseX, mouseY) == #FA4417) {
+
       if (get(mouseX, mouseY) == #FA4417) {
         for (int j = 0; j < 8; j++) {
           if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
@@ -85,15 +86,20 @@ class Peon extends Piezas {
             }
           }
         } 
+        // Generacion de el movimiento
         setTranslation(x, y);
-        selectb = false;
-        cont = 0;
+        // Deselecion de ambos colores
+        if (selectb == true) {
+          selectb = false;
+          // Cambio de Turno 
+          Turno = false;
+        } 
+        if (selectn == true) {
+          selectn = false;
+          // Cambio de Turno 
+          Turno = true;
+        }
       }
-    }
-    if (dye == true) {
-      Turno = true;
-    } else {
-      Turno = false;
     }
   }
 }

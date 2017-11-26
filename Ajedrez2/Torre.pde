@@ -45,9 +45,10 @@ class Torre extends Piezas {
       }
     }
     if (mousePressed) {
+
       if (get(mouseX, mouseY) == #FA4417) {
         for (int j = 0; j < 8; j++) {
-          if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
+          if ((mouseX > a +(height/8)*j) && (mouseX <= a +(height/8)*(j+1))) {
             x = j;
           }
         }
@@ -81,25 +82,20 @@ class Torre extends Piezas {
             }
           }
         } 
+        // Generacion de el movimiento
         setTranslation(x, y);
-
+        // Deselecion de ambos colores
         if (selectb == true) {
           selectb = false;
-          Turno=!Turno;
+          // Cambio de Turno 
+          Turno = false;
         } 
         if (selectn == true) {
           selectn = false;
-          Turno=!Turno;
+          // Cambio de Turno 
+          Turno = true;
         }
-        cont = 0;
       }
-    }
-
-
-    if (dye == true) {
-      Turno = true;
-    } else {
-      Turno = false;
     }
   }
 }

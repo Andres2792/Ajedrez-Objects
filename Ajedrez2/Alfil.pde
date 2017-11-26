@@ -26,6 +26,7 @@ class Alfil extends Piezas {
     void move(int x, int y) {
 
     for (int i = 1; i < 8; i++) {
+
       // Creacion de la Diagonal Inferior Izquierda del alfil
       if ((y - i) >= 0 && (x - i) >= 0) {
         fill(#FA4417);
@@ -48,13 +49,15 @@ class Alfil extends Piezas {
       }
     }
 
-    if (mousePressed) {
-      if (get(mouseX, mouseY) == #FA4417) {
+    if (mousePressed == true && get(mouseX, mouseY) == #FA4417) {
+
+      if ( get(mouseX, mouseY) == #FA4417 && mouseButton == LEFT) {
         for (int j = 0; j < 8; j++) {
-          if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
+          if ((mouseX > a +(height/8)*j) && (mouseX <= a +(height/8)*(j+1))) {
             x = j;
           }
         }
+
         for (int j = 8; j > 0; j--) {
           if ((mouseY < (height/8)*(j)) && (mouseY >= (height/8)*(j-1))) {
             switch(j - 1) {
@@ -84,25 +87,21 @@ class Alfil extends Piezas {
               break;
             }
           }
-        } 
+        }
+        // Generacion de el movimiento
         setTranslation(x, y);
-
+        // Deselecion de ambos colores
         if (selectb == true) {
           selectb = false;
-          //Turno=!Turno;
+          // Cambio de Turno 
+          Turno = false;
         } 
         if (selectn == true) {
           selectn = false;
-          //Turno=!Turno;
+          // Cambio de Turno 
+          Turno = true;
         }
-        cont = 0;
       }
-    }
-
-    if (dye == true) {
-      Turno = true;
-    } else {
-      Turno = false;
     }
   }
 }
