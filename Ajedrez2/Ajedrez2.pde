@@ -292,6 +292,10 @@ void keyPressed() {
     Turno=true;
     problemas(n);
   }
+  if (key == 'r' || key == 'R') {
+    println("reinicio");
+    problemas(16);
+  }
 }
 
 void mouseMoved() {
