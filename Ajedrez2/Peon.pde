@@ -34,8 +34,6 @@ class Peon extends Piezas {
           rect(Mx[y+1][x], My[y+1][x], height/8, height/8);
         }
       }
-
-      
     } 
     if (selectn == true) {
       if ((y + 1) == 7) {
@@ -49,13 +47,9 @@ class Peon extends Piezas {
         }
       }
     }
-    
+
     if (mousePressed) {
-        cont=2;
-        println(get(mouseX, mouseY));
-      }
-      
-      if (cont == 2 && get(mouseX, mouseY) == #FA4417) {
+      if (get(mouseX, mouseY) == #FA4417) {
         for (int j = 0; j < 8; j++) {
           if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
             x = j;
@@ -95,6 +89,7 @@ class Peon extends Piezas {
         selectb = false;
         cont = 0;
       }
+    }
     if (dye == true) {
       Turno = true;
     } else {

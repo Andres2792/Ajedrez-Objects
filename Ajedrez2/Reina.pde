@@ -62,10 +62,6 @@ class Reina extends Piezas {
     }
 
     if (mousePressed&&get(mouseX, mouseY)==#FA4417) {
-      cont=2;
-      println(get(mouseX, mouseY));
-    }
-    if (cont == 2) {
       for (int j = 0; j < 8; j++) {
         if ((mouseX > a+(height/8)*j) && (mouseX <= a+(height/8)*(j+1))) {
           x = j;
