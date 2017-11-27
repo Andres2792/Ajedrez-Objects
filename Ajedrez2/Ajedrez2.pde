@@ -74,7 +74,7 @@ int contador = 0;
 boolean s = true;
 int cont = 0;
 int g;
-boolean prueba, prueba1, prueba2, prueba3, prueba4;
+boolean prueba, prueba1, prueba2, prueba3;
 
 
 void setup() {
@@ -84,7 +84,6 @@ void setup() {
   prueba1 = false;
   prueba2 = false;
   prueba3 = false;
-  prueba4 = false;
 
   // Portada - Configuracion de la pantalla
   if (width-height > 300) {
