@@ -1,6 +1,6 @@
 void diagii(int x, int y, boolean selectb) { // Creacion de la Diagonal Inferior Izquierda
 
- if (selectb == true) {
+  if (selectb == true) {
     for (int i = 1; i < 8; i++) {// bucle de 8 repeticiones
       for (int q = 0; q < j; q++) {// bucle de 16 repeticiones       
         for (int p = 0; p < k; p++) { // bucle de 16 repeticiones
@@ -17,6 +17,7 @@ void diagii(int x, int y, boolean selectb) { // Creacion de la Diagonal Inferior
               rect(Mx[y-i][x-i], My[y-i][x-i], height/8, height/8);
               i = 8;
               p = k; //p = 16
+              prueba = true;
             } else if (PiezasB[q].trans.x == Mx[y-i][x-i] && PiezasB[q].trans.y == My[y-i][x-i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
@@ -47,6 +48,7 @@ void diagii(int x, int y, boolean selectb) { // Creacion de la Diagonal Inferior
               rect(Mx[y-i][x-i], My[y-i][x-i], height/8, height/8);
               i = 8;
               p = k; //p = 16
+              prueba = true;
             } else if (PiezasB[q].trans.x == Mx[y-i][x-i] && PiezasB[q].trans.y == My[y-i][x-i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
@@ -65,7 +67,7 @@ void diagii(int x, int y, boolean selectb) { // Creacion de la Diagonal Inferior
 
 void diagid(int x, int y, boolean selectb) {// Creacion de la Diagonal Inferior Derecha
 
- if (selectb == true) {
+  if (selectb == true) {
     for (int i = 1; i < 8; i++) {// bucle de 8 repeticiones
       for (int q = 0; q < j; q++) {// bucle de 16 repeticiones       
         for (int p = 0; p < k; p++) { // bucle de 16 repeticiones
@@ -82,6 +84,7 @@ void diagid(int x, int y, boolean selectb) {// Creacion de la Diagonal Inferior 
               rect(Mx[y-i][x+i], My[y-i][x+i], height/8, height/8);
               i = 8;
               p = k; //p = 16
+              prueba1 = true;
             } else if (PiezasB[q].trans.x == Mx[y-i][x+i] && PiezasB[q].trans.y == My[y-i][x+i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
@@ -111,7 +114,8 @@ void diagid(int x, int y, boolean selectb) {// Creacion de la Diagonal Inferior 
               fill(224, 80, 247, 100);
               rect(Mx[y-i][x+i], My[y-i][x+i], height/8, height/8);
               i = 8;
-              p = k; //p = 16
+              p = k; //p = 16              
+              prueba1 = true;
             } else if (PiezasB[q].trans.x == Mx[y-i][x+i] && PiezasB[q].trans.y == My[y-i][x+i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
@@ -147,6 +151,7 @@ void diagsi(int x, int y, boolean selectb) { // Creacion de la Diagonal Superior
               rect(Mx[y+i][x-i], My[y+i][x-i], height/8, height/8);
               i = 8;
               p = k; //p = 16
+              prueba2 = true;
             } else if (PiezasB[q].trans.x == Mx[y+i][x-i] && PiezasB[q].trans.y == My[y+i][x-i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
@@ -177,6 +182,7 @@ void diagsi(int x, int y, boolean selectb) { // Creacion de la Diagonal Superior
               rect(Mx[y+i][x-i], My[y+i][x-i], height/8, height/8);
               i = 8;
               p = k; //p = 16
+              prueba2 = true;
             } else if (PiezasB[q].trans.x == Mx[y+i][x-i] && PiezasB[q].trans.y == My[y+i][x-i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
@@ -195,7 +201,7 @@ void diagsi(int x, int y, boolean selectb) { // Creacion de la Diagonal Superior
 
 void diagsd(int x, int y, boolean selectb) { // Creacion de la Diagonal Superior Derecha 
 
- if (selectb == true) {
+  if (selectb == true) {
     for (int i = 1; i < 8; i++) {// bucle de 8 repeticiones
       for (int q = 0; q < j; q++) {// bucle de 16 repeticiones       
         for (int p = 0; p < k; p++) { // bucle de 16 repeticiones
@@ -212,6 +218,7 @@ void diagsd(int x, int y, boolean selectb) { // Creacion de la Diagonal Superior
               rect(Mx[y+i][x+i], My[y+i][x+i], height/8, height/8);
               i = 8;
               p = k; //p = 16
+              prueba3 = true;
             } else if (PiezasB[q].trans.x == Mx[y+i][x+i] && PiezasB[q].trans.y == My[y+i][x+i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
@@ -242,6 +249,7 @@ void diagsd(int x, int y, boolean selectb) { // Creacion de la Diagonal Superior
               rect(Mx[y+i][x+i], My[y+i][x+i], height/8, height/8);
               i = 8;
               p = k; //p = 16
+              prueba3 = true;
             } else if (PiezasB[q].trans.x == Mx[y+i][x+i] && PiezasB[q].trans.y == My[y+i][x+i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
