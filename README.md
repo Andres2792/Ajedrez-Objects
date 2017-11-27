@@ -9,12 +9,12 @@
 
 # Introducción
 
-El Ajedrez es un juego antiguo de origen árabe, creado para mejorar las capacidades estratégicas de los generales de la época, para lo cual se plantea una batalla ficticia en un campo con 8 peones, 2 torres, 2 caballos, 2 alfiles, una reina y un rey, cuyo objetivo es vencer al contrincante mediante ataques al rey. Por lo anterior decidimos crear una aplicación que permitiera acabar una partida de este juego cuando queden 7 piezas en juego de la mejor forma posible para entrenar a los jugadores.
+El Ajedrez es un juego antiguo de origen árabe, creado para mejorar las capacidades estratégicas de los generales de la época, para lo cual se plantea una batalla ficticia en un campo con 8 peones, 2 torres, 2 caballos, 2 alfiles, una reina y un rey, cuyo objetivo es vencer al contrincante mediante ataques al rey. Por lo anterior decidimos crear una aplicación que permite practicar el juego mediante la resolución de problemas de finales.
 
 
 ## Problemática
 
-En el juego del Ajedrez siempre se llega a una situacion donde quedan 7 fichas o menos, esto significa que siempre hay un posible final donde se mueven perfectamente las piezas y asi no se extiende la partida, esta consecución de movimientos es la solcuion que busca nuestro proyecto enseñar a sus usuarios y asi mejorar su nivel en dicho juego y al mismo tiempo ayudar a terminar partidas de forma satisfactoria.
+En el juego del Ajedrez siempre se llega a una situacion donde no es sufuciente saber como se mueven todas las fichas ni las reglas. Es necesaria la práctica para aprender como aplicar lo aprendido previamente. La solución que brnda nuestro proyecto ante este proyecto es la posibilidad de práctica mediante problemas relacionados con finales de partidas y asi mejorar el nivel del usuario en dicho juego.
 
 ## Marco teórico
 El ajedrez es un juego de dos personas, donde cada una de ellas dispone de 16 piezas que se colocan sobre un tablero de 64 casillas con el objetivo de derrocar al rey del adversario mediante jugadas estrategicas. Algunos de los beneficios de este juego son: Fomenta la capacidad organizativa y el equilibrio entre lo racional y lo emocional, aumenta la creatividad, otorga al jugador previsión, prudencia, precaución y coraje, potencia la memoria, desarrolla la estrategia militar, mejora la obediencia y la capacidad de analizar situaciones.
