@@ -24,10 +24,14 @@ class Alfil extends Piezas {
 
   @Override
     void move(int x, int y) {
-diagii(x, y, selectb);
+    diagii(x, y, selectb);
+    prueba = false;
     diagid(x, y, selectb);
+    prueba1 = false;
     diagsi(x, y, selectb);
+    prueba2 = false;
     diagsd(x, y, selectb);
+    prueba3 = false;
 
     if (mousePressed == true && get(mouseX, mouseY) == #FA4417) {
 

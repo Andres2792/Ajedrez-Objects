@@ -74,9 +74,16 @@ int contador = 0;
 boolean s = true;
 int cont = 0;
 int g;
+boolean prueba, prueba1, prueba2, prueba3;
 
 
 void setup() {
+  
+  // Configuracion booleanos de prueba de colision
+  prueba = false;
+  prueba1 = false;
+  prueba2 = false;
+  prueba3 = false;
 
   // Portada - Configuracion de la pantalla
   if (width-height > 300) {
@@ -215,7 +222,7 @@ void draw() {
       b[i].pintar();
       tc = millis()/1000;
     }
-    if (keyPressed &&key=='i') {
+    if (keyPressed && key=='i') {
       bot1 = false; 
       background(0);
       image(ini, 0, 0, width, height);
@@ -235,7 +242,7 @@ void draw() {
   }   
 
   if (bot2 == true) {
-    n=17;
+    n = 17;
     background(0);
     Tablero();
     image(ml, 0, 0, a, height-a/2);
@@ -280,7 +287,7 @@ void draw() {
     }
   }
   if (bot4 == true) {
-    n=1;
+    n = 1;
     background(0);
     Tablero();
     for (int i = 0; i < j; i++) {
@@ -296,15 +303,15 @@ void draw() {
       PiezasN[i].updaten(mouseX, mouseY);
     }
     verificar(1, cont);
-    if (g==1) {
+    if (g == 1) {
       image(bh2, -10, 0, width, height);
       b[3].setCol(#42E34E);
       if (keyPressed ) {
-        if (key=='m'||key=='M') {
-          bot4=false;
-          bot1=true;
-          inicio=true;
-          g=0;
+        if (key == 'm'||key == 'M') {
+          bot4 = false;
+          bot1 = true;
+          inicio = true;
+          g = 0;
         }
       }
     }
