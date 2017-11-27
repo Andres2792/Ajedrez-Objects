@@ -17,7 +17,7 @@ void diagii(int x, int y, boolean selectb) { // Creacion de la Diagonal Inferior
               rect(Mx[y-i][x-i], My[y-i][x-i], height/8, height/8);
               i = 8;
               p = k; //p = 16
-              prueba = true;
+              //prueba = true;
             } else if (PiezasB[q].trans.x == Mx[y-i][x-i] && PiezasB[q].trans.y == My[y-i][x-i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
@@ -38,18 +38,18 @@ void diagii(int x, int y, boolean selectb) { // Creacion de la Diagonal Inferior
           if ((y - i) >= 0 && (x - i) >= 0) {
 
             for (int w = 0; w < j; w++) {
-              if (PiezasB[w].trans.x == Mx[y-i][x-i] && PiezasB[w].trans.y == My[y-i][x-i] ) { // chequeo de todas aliadas haber si estan ahi
+              if (PiezasN[w].trans.x == Mx[y-i][x-i] && PiezasN[w].trans.y == My[y-i][x-i] ) { // chequeo de todas aliadas haber si estan ahi
                 prueba = true;
               }
             }
 
-            if (PiezasN[p].trans.x == Mx[y-i][x-i] && PiezasN[p].trans.y == My[y-i][x-i] ) { // chequeo de todas enemigas haber si estan ahi 
+            if (PiezasB[p].trans.x == Mx[y-i][x-i] && PiezasB[p].trans.y == My[y-i][x-i] ) { // chequeo de todas enemigas haber si estan ahi 
               fill(224, 80, 247, 100);
               rect(Mx[y-i][x-i], My[y-i][x-i], height/8, height/8);
               i = 8;
               p = k; //p = 16
               prueba = true;
-            } else if (PiezasB[q].trans.x == Mx[y-i][x-i] && PiezasB[q].trans.y == My[y-i][x-i] ) { // chequeo de todas aliadas haber si estan ahi 
+            } else if (PiezasN[q].trans.x == Mx[y-i][x-i] && PiezasN[q].trans.y == My[y-i][x-i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
             } 
@@ -105,18 +105,18 @@ void diagid(int x, int y, boolean selectb) {// Creacion de la Diagonal Inferior 
           if ((y - i) >= 0 && (x + i) < 8) {
 
             for (int w = 0; w < j; w++) {
-              if (PiezasB[w].trans.x == Mx[y-i][x+i] && PiezasB[w].trans.y == My[y-i][x+i] ) { // chequeo de todas aliadas haber si estan ahi
+              if (PiezasN[w].trans.x == Mx[y-i][x+i] && PiezasN[w].trans.y == My[y-i][x+i] ) { // chequeo de todas aliadas haber si estan ahi
                 prueba1 = true;
               }
             }
 
-            if (PiezasN[p].trans.x == Mx[y-i][x+i] && PiezasN[p].trans.y == My[y-i][x+i] ) { // chequeo de todas enemigas haber si estan ahi 
+            if (PiezasB[p].trans.x == Mx[y-i][x+i] && PiezasB[p].trans.y == My[y-i][x+i] ) { // chequeo de todas enemigas haber si estan ahi 
               fill(224, 80, 247, 100);
               rect(Mx[y-i][x+i], My[y-i][x+i], height/8, height/8);
               i = 8;
               p = k; //p = 16              
               prueba1 = true;
-            } else if (PiezasB[q].trans.x == Mx[y-i][x+i] && PiezasB[q].trans.y == My[y-i][x+i] ) { // chequeo de todas aliadas haber si estan ahi 
+            } else if (PiezasN[q].trans.x == Mx[y-i][x+i] && PiezasN[q].trans.y == My[y-i][x+i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
             } 
@@ -172,18 +172,18 @@ void diagsi(int x, int y, boolean selectb) { // Creacion de la Diagonal Superior
           if ((y + i) < 8 && (x - i) >= 0) {
 
             for (int w = 0; w < j; w++) {
-              if (PiezasB[w].trans.x == Mx[y+i][x-i] && PiezasB[w].trans.y == My[y+i][x-i] ) { // chequeo de todas aliadas haber si estan ahi
+              if (PiezasN[w].trans.x == Mx[y+i][x-i] && PiezasN[w].trans.y == My[y+i][x-i] ) { // chequeo de todas aliadas haber si estan ahi
                 prueba2 = true;
               }
             }
 
-            if (PiezasN[p].trans.x == Mx[y+i][x-i] && PiezasN[p].trans.y == My[y+i][x-i] ) { // chequeo de todas enemigas haber si estan ahi 
+            if (PiezasB[p].trans.x == Mx[y+i][x-i] && PiezasB[p].trans.y == My[y+i][x-i] ) { // chequeo de todas enemigas haber si estan ahi 
               fill(224, 80, 247, 100);
               rect(Mx[y+i][x-i], My[y+i][x-i], height/8, height/8);
               i = 8;
               p = k; //p = 16
               prueba2 = true;
-            } else if (PiezasB[q].trans.x == Mx[y+i][x-i] && PiezasB[q].trans.y == My[y+i][x-i] ) { // chequeo de todas aliadas haber si estan ahi 
+            } else if (PiezasN[q].trans.x == Mx[y+i][x-i] && PiezasN[q].trans.y == My[y+i][x-i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
             } 
@@ -239,18 +239,18 @@ void diagsd(int x, int y, boolean selectb) { // Creacion de la Diagonal Superior
           if ((y + i) < 8 && (x + i) < 8) {
 
             for (int w = 0; w < j; w++) {
-              if (PiezasB[w].trans.x == Mx[y+i][x+i] && PiezasB[w].trans.y == My[y+i][x+i] ) { // chequeo de todas aliadas haber si estan ahi
+              if (PiezasN[w].trans.x == Mx[y+i][x+i] && PiezasN[w].trans.y == My[y+i][x+i] ) { // chequeo de todas aliadas haber si estan ahi
                 prueba3 = true;
               }
             }
 
-            if (PiezasN[p].trans.x == Mx[y+i][x+i] && PiezasN[p].trans.y == My[y+i][x+i] ) { // chequeo de todas enemigas haber si estan ahi 
+            if (PiezasB[p].trans.x == Mx[y+i][x+i] && PiezasB[p].trans.y == My[y+i][x+i] ) { // chequeo de todas enemigas haber si estan ahi 
               fill(224, 80, 247, 100);
               rect(Mx[y+i][x+i], My[y+i][x+i], height/8, height/8);
               i = 8;
               p = k; //p = 16
               prueba3 = true;
-            } else if (PiezasB[q].trans.x == Mx[y+i][x+i] && PiezasB[q].trans.y == My[y+i][x+i] ) { // chequeo de todas aliadas haber si estan ahi 
+            } else if (PiezasN[q].trans.x == Mx[y+i][x+i] && PiezasN[q].trans.y == My[y+i][x+i] ) { // chequeo de todas aliadas haber si estan ahi 
               i = 8;
               q = j;
             } 
