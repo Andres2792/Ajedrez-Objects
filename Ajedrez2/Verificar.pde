@@ -271,28 +271,43 @@ int verificar(int n, int contador) {
   } else if (n == 11) {
     image(p11, 20, 0, a-30, height+10-a/5);
     image(m3, a/4, 7*height/8, a/2, a/4);
-    /*if (contador == 0) {
-     if (PiezasB[3].trans.x == Mx[4][5] && PiezasB[3].trans.y == My[4][5] && mousePressed && PiezasB[3].selectb == false) {
-     PiezasN[1].trans.x = Mx[4][5];
-     PiezasN[1].trans.y = My[4][5];
-     Turno = !Turno;
-     cont=1;
-     } else if (Turno == false && PiezasB[3].selectb == false && PiezasB[3].trans.x != Mx[4][5]) {
-     image(mal, a, height/4, 3*height/4, 3*height/4);
-     problemas(n);
-     Turno = true;
-     }
-     } if (contador == 1) {
-     if (PiezasB[1].trans.x == Mx[7][7] && PiezasB[1].trans.y == My[7][7] && mousePressed && PiezasB[3].selectb == false) { 
-     image(jm, height, height/4, 3*height/8, height/8);
-     g=1;
-     } else if ( (PiezasB[1].trans.x == Mx[7][6]||Mx[7][7] != PiezasB[1].trans.x) && Turno == false && PiezasB[1].selectb == false) {
-     image(mal, a, height/4, 3*height/4, 3*height/4);
-     problemas(n);
-     Turno = true;
-     cont=0;
-     }
-     }*/
+    if (contador == 0) {
+      if (PiezasB[7].trans.x == Mx[4][7] && PiezasB[7].trans.y == My[4][7] && mousePressed && PiezasB[7].selectb == false) {
+        PiezasB[7].trans.x = width;
+        PiezasN[6].trans.x = Mx[4][7];
+        PiezasN[6].trans.y = My[4][7];
+        Turno = !Turno;
+        cont=1;
+      } else if (Turno == false && PiezasB[7].selectb == false && PiezasB[7].trans.x != Mx[4][7]) {
+        image(mal, a, height/4, 3*height/4, 3*height/4);
+        problemas(n);
+        Turno = true;
+      }
+    } 
+    if (contador == 1) {
+      if (PiezasB[1].trans.x == Mx[6][3] && PiezasB[1].trans.y == My[6][3] && mousePressed && PiezasB[1].selectb == false) { 
+        PiezasN[3].trans.x = Mx[6][0];
+        PiezasN[3].trans.y = My[6][0];
+        Turno = !Turno;
+        cont=2;
+      } else if ( (PiezasB[1].trans.x == Mx[5][3]||Mx[6][3] != PiezasB[1].trans.x) && Turno == false && PiezasB[1].selectb == false) {
+        image(mal, a, height/4, 3*height/4, 3*height/4);
+        problemas(n);
+        Turno = true;
+        cont=0;
+      }
+    } 
+    if (contador ==2) {
+      if (PiezasB[1].trans.x == Mx[7][3] && PiezasB[1].trans.y == My[7][3] && mousePressed && PiezasB[1].selectb == false) {
+        image(jm, height, height/4, 3*height/8, height/8);
+        g=1;
+      } else if ( (PiezasB[1].trans.x == Mx[6][3]||Mx[7][3] != PiezasB[1].trans.x) && Turno == false && PiezasB[1].selectb == false) {
+        image(mal, a, height/4, 3*height/4, 3*height/4);
+        problemas(n);
+        Turno = true;
+        cont=0;
+      }
+    }
   } else if (n == 12) {
     image(p12, 0, 0, a, height-a/4);
     image(m3, a/4, 7*height/8, a/2, a/4);
@@ -315,7 +330,7 @@ int verificar(int n, int contador) {
         PiezasN[1].trans.y = My[4][5];
         Turno = !Turno;
         cont=2;
-      } else if ( (PiezasB[1].trans.x == Mx[6][4]||Mx[7][5] != PiezasB[1].trans.x) && Turno == false && PiezasB[0].selectb == false) {
+      } else if ( (PiezasB[1].trans.x == Mx[6][4]||Mx[7][5] != PiezasB[1].trans.x) && Turno == false && PiezasB[1].selectb == false) {
         image(mal, a, height/4, 3*height/4, 3*height/4);
         problemas(n);
         Turno = true;
