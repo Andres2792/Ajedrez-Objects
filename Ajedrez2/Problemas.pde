@@ -124,11 +124,11 @@ void problemas(int n) {
 
   case 8:
     // Piezas Blancas  
-    PiezasB[0] = new Caballo(Mx[5][4], My[5][4], true, "CB1");
+    PiezasB[4] = new Caballo(Mx[5][4], My[5][4], true, "CB1");
     PiezasB[1] = new Alfil(Mx[5][7], My[5][7], true, "AB1");
     PiezasB[2] = new Caballo(Mx[4][4], My[4][4], true, "CB2");
     PiezasB[3] = new Torre(Mx[4][6], My[4][6], true, "TB1");
-    PiezasB[4] = new Rey(Mx[2][7], My[2][7], true, "RB");
+    PiezasB[0] = new Rey(Mx[2][7], My[2][7], true, "RB");
     PiezasB[5] = new Reina(Mx[1][1], My[1][1], true, "QB");
 
     // Piezas Negras
@@ -189,6 +189,7 @@ void problemas(int n) {
     PiezasB[4] = new Peon(Mx[3][0], My[3][0], true, "PB4");
     PiezasB[5] = new Peon(Mx[3][3], My[3][3], true, "PB5");
     PiezasB[6] = new Alfil(Mx[5][4], My[5][4], true, "AB1");
+    PiezasB[7] = new Reina(Mx[1][4], My[1][4], true, "QB");
 
     // Piezas Negras
     PiezasN[0] = new Rey(Mx[5][2], My[5][2], false, "RN");
@@ -198,7 +199,7 @@ void problemas(int n) {
     PiezasN[4] = new Torre(Mx[6][1], My[6][1], false, "TN1");
     PiezasN[5] = new Peon(Mx[6][2], My[6][2], false, "PN1");
     PiezasN[6] = new Reina(Mx[0][7], My[0][7], false, "QN");
-    PiezasB[7] = new Reina(Mx[1][4], My[1][4], true, "QB");
+    
     j = 8;
     k = 7;           
 

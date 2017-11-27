@@ -30,12 +30,31 @@ PImage m3;
 PImage ml;
 PImage jm;
 PImage mal;
+PImage bh;
+PImage bh2;
 PImage i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13;
 PImage i[] = new PImage[13];
 boolean Turno = true;
+//botones (1-3 inicio) (4-18 jugar)
 boolean bot1 = false;
 boolean bot2 = false;
 boolean bot3 = false;
+boolean bot4 = false;
+boolean bot5 = false;
+boolean bot6 = false;
+boolean bot7 = false;
+boolean bot8 = false;
+boolean bot9 = false;
+boolean bot10 = false;
+boolean bot11 = false;
+boolean bot12 = false;
+boolean bot13 = false;
+boolean bot14 = false;
+boolean bot15 = false;
+boolean bot16 = false;
+boolean bot17 = false;
+boolean bot18 = false;
+boolean []arr={bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10, bot11, bot12, bot13, bot14, bot15, bot16, bot17, bot18};
 boolean inicio = true;
 int fila = 8;
 int columna = 8;
@@ -47,14 +66,14 @@ int[][] My;
 Piezas[] PiezasB;
 Piezas[] PiezasN;
 PImage ini;
-Btom[] b = new Btom [3];
+Btom[] b = new Btom [18];
 int tc;
 int ttc;
 int a, c, p = 0;
 int contador = 0;
 boolean s = true;
 int cont = 0;
-
+int g;
 
 
 void setup() {
@@ -70,6 +89,22 @@ void setup() {
   b[0] = new Btom ( height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Jugar");
   b[1] = new Btom (5*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Modo Libre");
   b[2] = new Btom (9*height/8, 6*height/8, width/4, height/10, color(0, 128, 255), "Instrucciones");
+  //creacion botones niveles
+  b[3] = new Btom ( height/6, height/8, height/6, height/6, color(0, 128, 255), "P1");
+  b[4] = new Btom ( 3*height/6, height/8, height/6, height/6, color(0, 128, 255), "P2");
+  b[5] = new Btom ( 5*height/6, height/8, height/6, height/6, color(0, 128, 255), "P3");
+  b[6] = new Btom ( 7*height/6, height/8, height/6, height/6, color(0, 128, 255), "P4");
+  b[7] = new Btom ( 9*height/6, height/8, height/6, height/6, color(0, 128, 255), "P5");
+  b[8] = new Btom ( height/6, 2.5*height/8, height/6, height/6, color(0, 128, 255), "P6");
+  b[9] = new Btom ( 3*height/6, 2.5*height/8, height/6, height/6, color(0, 128, 255), "P7");
+  b[10] = new Btom ( 5*height/6, 2.5*height/8, height/6, height/6, color(0, 128, 255), "P8");
+  b[11] = new Btom ( 7*height/6, 2.5*height/8, height/6, height/6, color(0, 128, 255), "P9");
+  b[12] = new Btom ( 9*height/6, 2.5*height/8, height/6, height/6, color(0, 128, 255), "P10");
+  b[13] = new Btom ( height/6, 4*height/8, height/6, height/6, color(0, 128, 255), "P11");
+  b[14] = new Btom ( 3*height/6, 4*height/8, height/6, height/6, color(0, 128, 255), "P12");
+  b[15] = new Btom ( 5*height/6, 4*height/8, height/6, height/6, color(0, 128, 255), "P13");
+  b[16] = new Btom ( 7*height/6, 4*height/8, height/6, height/6, color(0, 128, 255), "P14");
+  b[17] = new Btom ( 9*height/6, 4*height/8, height/6, height/6, color(0, 128, 255), "P15");
 
   // Carga e Inicio de las imagenes de la portada
   ini = loadImage("a1.jpg");
@@ -124,7 +159,9 @@ void setup() {
   jm = loadImage("jm.png");
   mal = loadImage("mal.png");
   ml = loadImage("ml.png");
-  
+  bh = loadImage("bh.png");
+  bh2 = loadImage("bh2.png");
+
   // Creacion de arreglo de Instrucciones y Carga imagenes de Instrucciones
   i1 = loadImage("1.png");
   i2 = loadImage("2.png");
@@ -132,9 +169,9 @@ void setup() {
   i4 = loadImage("4.png");
   i5 = loadImage("Rey.png");
   i6 = loadImage("Peon.png");
-  i7 = loadImage("Dama.png");
+  i9 = loadImage("Dama.png");
   i8 = loadImage("Alfil.png");
-  i9 = loadImage("Torre.png");
+  i7 = loadImage("Torre.png");
   i10 = loadImage("Caballo.png");
   i11 = loadImage("5.png");
   i12 = loadImage("6.png");
@@ -172,27 +209,33 @@ void draw() {
   }
   // Realiza cierta accion dependiendo de que boton haya sido presionado 
   if (bot1 == true) {
-
     background(0);
-    Tablero();
-    verificar(n, 0);
-    verificar(n, 1);
-    for (int i = 0; i < j; i++) {
-      PiezasB[i].draw();
+    image(bh, 0, 0, width, height);
+    for (int i = 3; i < 18; i++) { 
+      b[i].pintar();
+      tc = millis()/1000;
     }
-    for (int i = 0; i < k; i++) {
-      PiezasN[i].draw();
+    if (keyPressed &&key=='i') {
+      bot1 = false; 
+      background(0);
+      image(ini, 0, 0, width, height);
+      inicio = true;
+
+      // Pinta los botones siempre que el inicio sea True
+      if (inicio == true) {
+        for (int i = 0; i < 3; i++) { 
+          b[i].pintar();
+          tc = millis()/1000;
+        }
+      }
+      for (int i=0; i<18; i++) {
+        arr[i]=false;
+      }
     }
-    for (int i = 0; i < j; i++) {
-      PiezasB[i].updateb(mouseX, mouseY);
-    }
-    for (int i = 0; i < k; i++) {
-      PiezasN[i].updaten(mouseX, mouseY);
-    }
-  } 
+  }   
 
   if (bot2 == true) {
-
+    n=17;
     background(0);
     Tablero();
     image(ml, 0, 0, a, height-a/2);
@@ -211,18 +254,18 @@ void draw() {
   } 
 
   if (bot3 == true) {
-    
+
     if (keyPressed) {
       p++;
     }
-    
+
     if (p == 13) {
       // Vuelve al menu cuando no hay mas instrucciones
       bot3 = false; 
       background(0);
       image(ini, 0, 0, width, height);
       inicio = true;
-      
+
       // Pinta los botones siempre que el inicio sea True
       if (inicio == true) {
         for (int i = 0; i < 3; i++) { 
@@ -234,6 +277,460 @@ void draw() {
       // Pinta la instruccion (imagen) almacenada en la pocicion del arreglo i[p]
       background(0);
       image(i[p], 0, 0, width, height);
+    }
+  }
+  if (bot4 == true) {
+    n=1;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(1, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[3].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot4=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+
+  if (bot5 == true) {
+    n=2;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(2, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[4].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot5=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot6 == true) {
+    n=3;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(3, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[5].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot6=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot7 == true) {
+    n=4;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(4, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[6].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot7=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot8 == true) {
+    n=5;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(5, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[7].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot8=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot9 == true) {
+    n=6;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(6, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[8].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot9=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot10 == true) {
+    n=7;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(7, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[9].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot10=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+
+  if (bot11 == true) {
+    n=8;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(8, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[10].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot11=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+
+
+  if (bot12 == true) {
+    n=9;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(9, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[11].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot12=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot13 == true) {
+    n=10;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(10, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[12].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot13=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot14 == true) {
+    n=11;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(11, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[13].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot14=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot15 == true) {
+    n=12;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(12, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[14].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot15=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot16 == true) {
+    n=13;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(13, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[15].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot16=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot17 == true) {
+    n=14;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(14, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[16].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot17=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
+    }
+  }
+  if (bot18 == true) {
+    n=15;
+    background(0);
+    Tablero();
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].draw();
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].draw();
+    }
+    for (int i = 0; i < j; i++) {
+      PiezasB[i].updateb(mouseX, mouseY);
+    }
+    for (int i = 0; i < k; i++) {
+      PiezasN[i].updaten(mouseX, mouseY);
+    }
+    verificar(15, cont);
+    if (g==1) {
+      image(bh2, -10, 0, width, height);
+      b[17].setCol(#42E34E);
+      if (keyPressed ) {
+        if (key=='m'||key=='M') {
+          bot18=false;
+          bot1=true;
+          inicio=true;
+          g=0;
+        }
+      }
     }
   }
 }
@@ -260,16 +757,45 @@ void mousePressed() {
       bot1 = true;
       bot2 = false;
       bot3 = false;
-      println("Boton1");
-      inicio = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      //inicio = false;
     }
 
     if (b[1].col() == color(255, 102, 102)) {
+      n=17;
       bot1 = false;
       bot2 = true;
       bot3 = false;
-      problemas(16);
-      println("Boton2");
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
       inicio = false;
     }
 
@@ -277,7 +803,366 @@ void mousePressed() {
       bot1 = false;
       bot2 = false;
       bot3 = true;
-      println("Boton3");
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      inicio = false;
+    }
+    if (b[3].col() == color(255, 102, 102)) {
+      n=1;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = true;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[4].col() == color(255, 102, 102)) {
+      n=2;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = true;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[5].col() == color(255, 102, 102)) {
+      n=3;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = true;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[6].col() == color(255, 102, 102)) {
+      n=4;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = true;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[7].col() == color(255, 102, 102)) {
+      n=5;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = true;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[8].col() == color(255, 102, 102)) {
+      n=6;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = true;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[9].col() == color(255, 102, 102)) {
+      n=7;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = true;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[10].col() == color(255, 102, 102)) {
+      n=8;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = true;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[11].col() == color(255, 102, 102)) {
+      n=9;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = true;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[12].col() == color(255, 102, 102)) {
+      n=10;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = true;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[13].col() == color(255, 102, 102)) {
+      n=11;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = true;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[14].col() == color(255, 102, 102)) {
+      n=12;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = true;
+      bot16 = false;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[15].col() == color(255, 102, 102)) {
+      n=13;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = true;
+      bot17 = false;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[16].col() == color(255, 102, 102)) {
+      n=14;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = true;
+      bot18 = false;
+      problemas(n);
+      inicio = false;
+    }
+    if (b[17].col() == color(255, 102, 102)) {
+      n=15;
+      bot1 = false;
+      bot2 = false;
+      bot3 = false;
+      bot4 = false;
+      bot5 = false;
+      bot6 = false;
+      bot7 = false;
+      bot8 = false;
+      bot9 = false;
+      bot10 = false;
+      bot11 = false;
+      bot12 = false;
+      bot13 = false;
+      bot14 = false;
+      bot15 = false;
+      bot16 = false;
+      bot17 = false;
+      bot18 = true;
+      problemas(n);
       inicio = false;
     }
   }
@@ -287,21 +1172,18 @@ void mousePressed() {
 void keyPressed() {
 
   // Cambia el problema al presionar una tecla y al estar seleccionado el boton 1 de Juego problemas
-  if (bot1 == true) {
-    n++;
-    Turno=true;
-    problemas(n);
-  }
+
+
   if (key == 'r' || key == 'R') {
     println("reinicio");
-    problemas(16);
+    problemas(n);
   }
 }
 
 void mouseMoved() {
 
   // Cambia el color de los botones siempre que el mouse este encima del boton
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 18; i++) {
     if (dist(mouseX, mouseY, b[i].trans.x + b[i].gn.x /2, b[i].trans.y + b[i].gn.y /2) < width/25) {
       b[i].setCol(color(255, 102, 102));
     } else {
